@@ -107,7 +107,8 @@ export default function CryptionPage() {
   async function crypt(){ // Encryption/decryption
     if (file != null){ // If file provided
 
-      if (`E${file.name.split(".")[1].split("E")[1]}` != "Enc" && !isEncrypting){ // If file should decrypt, it should ends with Enc
+      file.name.split(".")[file.name.split(".").length - 1]
+      if (!file.name.split(".")[file.name.split(".").length - 1].includes("Enc") && !isEncrypting){ // If file should decrypt, it should ends with Enc
         setAlert({isShown: true, message: "You can decrypt only .*format*Enc files!"})
         return
       }
@@ -136,7 +137,8 @@ export default function CryptionPage() {
                     setAlert({isShown: true, message: "Something's gone wrong!"})
                     return 
                   }
-                  var filename = `${file.name.split(".")[0]}.${file.name.split(".")[1]}Enc`; // File will be in .*format*Enc extension
+                  var extensionOfFile = file.name.split(".")[file.name.split(".").length - 1]
+                  var filename = `${file.name.replace(`.${extensionOfFile}`, "")}.${extensionOfFile}Enc`; // File will be in .*format*Enc extension
                   a.href = url;
                   a.download = filename;
                   a.click();
