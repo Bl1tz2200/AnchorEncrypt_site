@@ -78,7 +78,7 @@ export default function CryptionPage() {
     if (getCookieValue("longToken") == "NotFound"){ // User can accept this only of he isn't logged in (don't have long token to update short token)
       setIsVanished(`${styles.load} ${styles.vanish}`);
     } else {
-      router.push("/profile") // If user already logged, he will see his profile
+      router.push("/cryption") // If user already logged, he will see cryption page
     }
   }, []);
 
