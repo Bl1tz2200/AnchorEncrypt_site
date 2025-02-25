@@ -54,7 +54,7 @@ All pages're located in `./Frontend/src/app`: <br>
 <br>
 <br>
 PS <br>
-In my opinion, my code isn't optimized, that's why there are many CTRL+C CTRL+V parts. <br>
+In my opinion, my code isn't optimized, that's why there are many copypaste parts. <br>
 If you want to run site for real production, I would definitely recommed make code review and move all repeating part into separate files.
 
 # Backend
